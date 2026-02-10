@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import useFetch from "../hooks/useFetch"
+import useFetch from "../hooks/useAxios"
 import Loading from "../Component/shared/Is Loading";
 import Error from "../Component/shared/Error";
 

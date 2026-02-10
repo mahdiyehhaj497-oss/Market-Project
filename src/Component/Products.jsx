@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Carts from "./Carts";
 import Loading from "./shared/Is Loading";
+import axios from "axios";
+import Navbar from "./shared/Navbar";
 
 
 let tmo;
@@ -35,8 +37,10 @@ export default function Products() {
     <>
       {isLoading && <Loading />}
       {isError && <h1> is loading</h1>}
-      <div className="  bg-[#2b3c4a] w-screen">
-        <div className="flex justify-center items-center">
+      <div className="  bg-second-100 w-screen">
+        <div className="flex justify-center"><Navbar/></div>
+        <div className="flex justify-center items-center ">
+          
           <input
             type="text"
             className=" w-96 h-10 rounded-3xl bg-[#C0C0C0] hover:bg-[#D7D7D7]  mt-8 pl-3 border-[#C0C0C8] border-2  text-[#2b3c4a]"

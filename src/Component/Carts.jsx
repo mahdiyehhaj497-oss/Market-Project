@@ -4,14 +4,14 @@ import { ShoppingBasket } from "lucide-react";
 export default function Carts({ price,title,description,category,image}) {
     return (
       <>
-        <div className=" group  w-full max-w-70 h-90  relative rounded-tl-4xl rounded-br-4xl mx-4 my-6">
+        <div className=" group  w-full max-w-70 h-90  relative  mx-4 my-6 ">
           <img
-            className="w-full h-90 object-contain bg-[#A0C4E1] rounded-tl-4xl rounded-br-4xl"
+            className="w-full h-90 object-contain bg-white rounded-2xl "
             src={image}
           />
           <div
             className="bg-[#031E4260] absolute top-0 left-0 h-full w-full hidden 
-           group-hover:flex flex-wrap justify-center items-center text-white p-3 rounded-tl-4xl rounded-br-4xl"
+           group-hover:flex flex-wrap justify-center items-center text-white p-3 rounded-2xl "
           >
             <button className="absolute top-1 right-2 bg-[#FF514B] w-16 h-10 rounded-2xl border border-white">
               {Math.floor(Math.random() * 100)}%

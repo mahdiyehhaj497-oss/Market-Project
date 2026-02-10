@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 export default function useFetch(url) {
     const [data, setData] = useState([])
@@ -5,7 +6,12 @@ export default function useFetch(url) {
     const [error, setError] = useState(null)
     const[isError,setIsError]=useState(false)
     useEffect(() => {
-        fetch(url)
+//         async function callApi() {
+//     const result=await axios.get(url)
+// }
+
+// callApi()
+        axios.get(url)
             .then(res => res.json())
             .then(json => setData(json))
             .catch((error) => {
