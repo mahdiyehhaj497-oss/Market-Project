@@ -1,8 +1,9 @@
 import axios from "axios";
-
+const baseURL=import.meta.env.VITE_BASE_URL
 const api = axios.create({
-  baseURL: "https://fakestoreapi.com/",
-  headers: { "Content-Type": "application/json" },
+  baseURL: baseURL,
+    headers: {
+        "Content_Type":"application/json" },
 });
 api.interceptors.response.use(
     (res) => {

@@ -37,20 +37,20 @@ export default function Products() {
     <>
       {isLoading && <Loading />}
       {isError && <h1> is loading</h1>}
-      <div className="  bg-second-100 w-screen">
+      <div className="  bg-cream-100 w-screen">
         <div className="flex justify-center"><Navbar/></div>
         <div className="flex justify-center items-center ">
           
           <input
             type="text"
-            className=" w-96 h-10 rounded-3xl bg-[#C0C0C0] hover:bg-[#D7D7D7]  mt-8 pl-3 border-[#C0C0C8] border-2  text-[#2b3c4a]"
+            className=" w-96 h-10 rounded-3xl bg-graylight-100 hover:bg-[#D7D7D7]  mt-8 pl-3 border-[#C0C0C8] border-2  text-[#2b3c4a]"
             value={searchVal}
             placeholder="Enter your term"
             onChange={(evt) => setSearchVal(evt.target.value)}
           />
         </div>
 
-        <div className="grid grid-cols-5 gap-4  m-4 ">
+        <div className="grid grid-cols-4 gap-2  m-4  ">
           {filteredPost.map((item) => (
             <Carts
               key={item.id}
@@ -59,6 +59,7 @@ export default function Products() {
               image={item.image}
               category={item.category}
               price={item.price}
+              id={item.id}
             />
           ))}
         </div>

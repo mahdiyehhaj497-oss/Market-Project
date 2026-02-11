@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 @theme{
-    --color-first-100:rgb(79, 79, 79);
-    --color-second-100:rgb(138, 138, 138);
-    --color-third-100:rgb(215, 207, 199);
-    --color-forth-100:rgb(28, 28, 28);
-    --color-fifth-100:rgb(181, 179, 177);
-    --color-sixth-100:rgb(162, 45, 45);
-
-}
+    --color-darkg-100:rgb(79, 79, 79);
+    --color-lightg-100:rgb(138, 138, 138);
+    --color-cream-100:rgb(215, 207, 199);
+    --color-black-100:rgb(28, 28, 28);
+    --color-graylight-100:rgb(181, 179, 177);
+    --color-redd-100:rgb(162, 45, 45);
+    --color-darkblue-100:rgb(140, 163, 175);
+    --color-gren-100:rgb(37, 120, 27);
+    --color-mountainblue-100:rgb(65, 90, 119,67%);
+    --color-skyb-100:rgb(67, 199, 246);
+   --color-lightred-100: rgb(253, 68, 76)
+    }

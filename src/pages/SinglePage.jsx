@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom"
-import useFetch from "../hooks/useAxios"
+import useAxios from "../hooks/useAxios"
 import Loading from "../Component/shared/Is Loading";
 import Error from "../Component/shared/Error";
 
 
 export default function SinglePage() {
 
-    const params = useParams()
-    const { data, isLoading, isError } = useFetch(
-      "https://fakestoreapi.com/products/20"
+    const params= useParams()
+    const { data, isLoading, isError } = useAxios(
+      'https://fakestoreapi.com/products/20'
     );
  
     return (
