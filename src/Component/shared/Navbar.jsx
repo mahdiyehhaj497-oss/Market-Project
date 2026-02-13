@@ -34,7 +34,7 @@ export default function Navbar() {
                   className="items-center mr-5 h-8 w-8  hover:text-xl"
                   src="src/assets/iconcart.png"
                 />
-                <span className="px-2 bg-skyb-100/80 absolute top-0 right-0 -translate-y-1/2 -translate-x-1/2 rounded-2xl">
+                <span className="px-2  absolute top-0 right-0 -translate-y-1/2 -translate-x-1/2 rounded-2xl">
                   {cart.length}
                 </span>
               </Link>
