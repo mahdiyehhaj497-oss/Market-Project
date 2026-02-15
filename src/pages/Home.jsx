@@ -1,6 +1,6 @@
 import { SearchCheck } from "lucide-react";
 import { Link } from "react-router-dom";
-import Button from "../Component/shared/Button";
+import { Button } from "../components/ui/button";
 import Navbar from "../Component/shared/Navbar";
 
 export default function Home() { 
@@ -23,7 +23,7 @@ export default function Home() {
               </h1>
               <div className="flex justify-center items-center mt-8">
                 <Link to="/product">
-                  <button className="p-3 rounded-2xl bg-lightg-100 font-bold text-redd-100">show products</button>
+                  <Button >show products</Button>
                 </Link>
               </div>
             </div>
