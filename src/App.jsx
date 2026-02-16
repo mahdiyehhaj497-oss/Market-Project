@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
+import {BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
  import Layout from "./Component/Layout";
  import Home from "./pages/Home";
 import SeePro from "./pages/SeePro";
@@ -7,9 +7,11 @@ import SingIn from "./pages/Sing In";
 import { createContext, useReducer} from "react";
  import Settelment from "./pages/Settelment";
 import CartReducer from "./reducer/CartReducer";
-import routes from "./routes";
+import routes from "../router";
+
 
  export const CartContext=createContext()
+
 
 export default function App() {
   
@@ -17,22 +19,26 @@ export default function App() {
   
   return (
     <>
-       <BrowserRouter>
-        <Layout>
-          <CartContext.Provider value={{ cart, cartDispatch }}>
+       <BrowserRouter> 
+         <Layout>
+      <CartContext.Provider value={{ cart, cartDispatch }}>
+        {/* <RouterProvider router={routes}/> */}
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/singin" element={<SingIn />} />
-              <Route path="/product" element={<SeePro />} />
-              <Route path="/product/:id" element={<SinglePage />} />
-              <Route path="/Settelment" element={<Settelment />} />
-            </Routes>
-          </CartContext.Provider>
-        </Layout>
-      </BrowserRouter> 
-        {/* <CartContext.Provider value={{ cart, cartDispatch }}> 
-        <RouterProvider router={routes} />
-      </CartContext.Provider>  */}
-    </> 
+  //             <Route path="/" element={<Home />} />
+  //             <Route path="/singin" element={<SingIn />} />
+  //             <Route path="/product" element={<SeePro />} />
+  //             <Route path="/product/:id" element={<SinglePage />} />
+  //             <Route path="/Settelment" element={<Settelment />} />
+  //           </Routes>
+           </CartContext.Provider>
+        </Layout> 
+      </BrowserRouter>
+        
+    </>
   );
-}
+  
+   }
+  
+
+   
+
