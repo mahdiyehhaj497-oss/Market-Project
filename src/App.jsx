@@ -1,11 +1,11 @@
 import {BrowserRouter, Route, RouterProvider, Routes} from "react-router-dom";
-import Layout from "./Component/Layout";
-import Home from "./pages/Home";
+ import Layout from "./Component/Layout";
+ import Home from "./pages/Home";
 import SeePro from "./pages/SeePro";
-import SinglePage from "./pages/SinglePage";
+ import SinglePage from "./pages/SinglePage";
 import SingIn from "./pages/Sing In";
 import { createContext, useReducer} from "react";
-import Settelment from "./pages/Settelment";
+ import Settelment from "./pages/Settelment";
 import CartReducer from "./reducer/CartReducer";
 import routes from "./routes";
 
@@ -17,7 +17,7 @@ export default function App() {
   
   return (
     <>
-      <BrowserRouter>
+       <BrowserRouter>
         <Layout>
           <CartContext.Provider value={{ cart, cartDispatch }}>
             <Routes>
@@ -29,10 +29,10 @@ export default function App() {
             </Routes>
           </CartContext.Provider>
         </Layout>
-      </BrowserRouter>
-      {/* <CartContext.Provider value={{ cart, cartDispatch }}>
+      </BrowserRouter> 
+        {/* <CartContext.Provider value={{ cart, cartDispatch }}> 
         <RouterProvider router={routes} />
-      </CartContext.Provider> */}
-    </>
+      </CartContext.Provider>  */}
+    </> 
   );
 }
