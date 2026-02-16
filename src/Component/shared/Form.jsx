@@ -48,7 +48,7 @@ export default function Form() {
           </div>
           <form onSubmit={handleSubmit(submitHandler)}>
             <div className="flex flex-col text-white  mb-1 mt-3 ">
-              <label htmlFor="username" className="text-2xl ml-2">
+              <label htmlFor="username" className="text-xl ml-2">
                 UserName
               </label>
               <input
@@ -60,7 +60,7 @@ export default function Form() {
               {errors.username && <p>{errors.username.message}</p>}
             </div>
             <div className="flex flex-col text-white  mb-1 mt-3">
-              <label htmlFor="firstname" className="text-2xl ml-2">
+              <label htmlFor="firstname" className="text-xl ml-2">
                 First Name
               </label>
               <input
@@ -71,7 +71,7 @@ export default function Form() {
               />
             </div>
             <div className="flex flex-col text-white  mb-1 mt-3 ">
-              <label htmlFor="lastname" className="text-2xl ml-2">
+              <label htmlFor="lastname" className="text-xl ml-2">
                 LastName
               </label>
               <input
@@ -82,7 +82,7 @@ export default function Form() {
               />
             </div>
             <div className="flex flex-col text-white  mb-1 mt-3 ">
-              <label htmlFor="email" className="text-2xl ml-2">
+              <label htmlFor="email" className="text-xl ml-2">
                 Email
               </label>
               <input
@@ -93,7 +93,7 @@ export default function Form() {
               />
             </div>
             <div className="flex flex-col text-white  mb-1 mt-3 ">
-              <label htmlFor="password" className="text-2xl ml-2">
+              <label htmlFor="password" className="text-xl ml-2">
                 Password
               </label>
               <input
@@ -104,7 +104,7 @@ export default function Form() {
               />
             </div>
             <div className="flex flex-col text-white  mb-1 mt-3 ">
-              <label htmlFor="confirm_password" className="text-2xl ml-2">confirm password:</label>
+              <label htmlFor="confirm_password" className="text-xl ml-2">confirm password:</label>
               <input
                 className="mt-1 p-1.5 pl-5 rounded-2xl w-60 border border-white"
                 type="password"
@@ -115,7 +115,7 @@ export default function Form() {
                 <p>{errors.confirm_password.message}</p>
               )}
             </div>
-            <div className="flex justify-center items-center bg-white rounded-2xl h-8 mt-3 mx-2 ">
+            <div className="flex justify-center items-center bg-white rounded-2xl h-8 mt-4 mx-2 mb-10">
               <input type="submit" value="register" />
               
               <button onClick={() => reset()}>/Reset</button>

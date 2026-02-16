@@ -1,42 +1,49 @@
 import { useEffect, useState } from "react";
 import Carts from "./Carts";
 import Loading from "./shared/Is Loading";
-import axios from "axios";
 import Navbar from "./shared/Navbar";
+import useGetProducts from "../hooks/usegetProducts";
 
 
 let tmo;
 export default function Products() {
   const [searchVal, setSearchVal] = useState("")
   const [filteredPost, setFilteredPost] = useState([]);
-  const [allPost, setAllPost] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setISError] = useState(null);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => setAllPost(data))
-      .catch((error) => {
-        setISError(true);
-        setError(error);
-      })
-      .finally(() => setIsLoading(false));
-  }, []);
+  // const [allPost, setAllPost] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [isError, setISError] = useState(null);
+  // const [error, setError] = useState(null);
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((response) => response.json())
+  //     .then((data) => setAllPost(data))
+  //     .catch((error) => {
+  //       setISError(true);
+  //       setError(error);
+  //     })
+  //     .finally(() => setIsLoading(false));
+  // }, []);
   
+  const { data, isError, isLoading}=useGetProducts()
+  
+  useEffect(() => { 
+    if (data?.data) {
+      setFilteredPost(data.data)
+    }
+  }, [data])
   useEffect(() => {
     if (tmo) {
       clearTimeout(tmo);
     }
     tmo = setTimeout(() => {
-      setFilteredPost(allPost.filter((item) => item.title.includes(searchVal)));
+      setFilteredPost((data?.data || []).filter((item) => item.title.includes(searchVal)));
     }, 1000);
-  }, [searchVal, allPost]);
+  }, [searchVal, data]);
 
   return (
     <>
       {isLoading && <Loading />}
-      {isError && <h1> is loading</h1>}
+      {isError && <h1> error</h1>}
       <div className="  bg-cream-100 w-screen">
         <div className="flex justify-center"><Navbar/></div>
         <div className="flex justify-center items-center ">

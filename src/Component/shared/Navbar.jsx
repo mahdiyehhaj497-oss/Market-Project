@@ -21,7 +21,7 @@ export default function Navbar() {
           </div>
           <div className="flex ml-auto items-center">
             <ul className="flex text-redd-100 font-bold text-lg gap-4">
-              <Link to="/about">
+              <Link to="/singin">
                 <li className=" text-sixth-100 hover:text-xl">Sing In</li>
               </Link>
               <li className=" text-sixth-100 hover:text-2xl"> Contact Us</li>

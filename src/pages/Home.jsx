@@ -23,7 +23,7 @@ export default function Home() {
               </h1>
               <div className="flex justify-center items-center mt-8">
                 <Link to="/product">
-                  <Button >show products</Button>
+                  <Button variant="ghost">show products</Button>
                 </Link>
               </div>
             </div>
