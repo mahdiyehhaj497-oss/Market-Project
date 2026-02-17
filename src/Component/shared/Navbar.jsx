@@ -26,7 +26,7 @@ export default function Navbar() {
               </Link>
               <li className=" text-sixth-100 hover:text-2xl"> Contact Us</li>
 
-              <Link to="/product/:productId">
+              <Link to="/product/:id">
                 <li className=" text-sixth-100 hover:text-2xl">Single Page</li>
               </Link>
               <Link to="/Settelment" className="relative">

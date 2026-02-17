@@ -4,11 +4,11 @@ import SingIn from "./src/pages/Sing In";
 import SeePro from "./src/pages/SeePro";
 import Settelment from "./src/pages/Settelment";
 import Layout from "./src/Component/Layout";
-import SinglePage from "./src/pages/SinglePage";
+import SinglePage from "./src/Component/SinglePage";
 import ProtectedRoute from "./src/ProtectedRouts";
 import AdminPage from "./src/Component/AdminPage";
 import { lazy } from "react";
-  
+
 const Home = lazy(() => import("./src/pages/Home"));
 
 const routes = createBrowserRouter([
@@ -25,26 +25,30 @@ const routes = createBrowserRouter([
       },
       {
         path: "/product",
-          element: <SeePro />,
-          children: [{
-              path: ":id",
-              element:<SinglePage/>
-        }]
-        },
-        {
-            path: "/admin-panel",
-            element: <ProtectedRoute/>,
-            children: [{
-                index: true,
-                element:<AdminPage/>
-            }]
-    },
+        element: <SeePro />,
+        children: [
+          {
+            path: ":id",
+            element: <SinglePage />,
+          },
+        ],
+      },
+      {
+        path: "/admin-panel",
+        element: <ProtectedRoute />,
+        children: [
+          {
+            index: true,
+            element: <AdminPage />,
+          },
+        ],
+      },
       {
         path: "/Settelment",
         element: <Settelment />,
-        }, 
+      },
     ],
   },
 ]);
 
-export default routes
+export default routes;
