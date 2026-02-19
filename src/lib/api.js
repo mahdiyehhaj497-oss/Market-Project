@@ -1,9 +1,14 @@
 import axios from "axios";
-const baseURL=import.meta.env.VITE_BASE_URL
+import Cookies from "js-cookie";
+
+const baseURL = import.meta.env.VITE_BASE_URL
+const token=Cookies.get("token")
 const api = axios.create({
   baseURL: baseURL,
     headers: {
-        "Content_Type":"application/json" },
+        "Content_Type": "application/json",
+    Authorization:`Bearer ${token}`
+    },
 });
 api.interceptors.response.use(
     (res) => {
@@ -14,8 +19,8 @@ api.interceptors.response.use(
         }
     },
     (err) => {
-        if (err == 401) {
-            location.href="./login"
+        if (err == 403) {
+            location.href="./singin"
         }
     }
 );

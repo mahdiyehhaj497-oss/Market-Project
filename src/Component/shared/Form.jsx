@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import usePostLogIn from "../../hooks/usePostLogIn";
 
 const schema = yup.object().shape({
   username: yup.string().required("username is required!!!"),
   firstname: yup.string().min(3, "min length for first name is 3"),
   lastname: yup.string().required("lastnmae is required"),
   email: yup.string().email("email is not valid!!!"),
-  password: yup.string().min(8, "you need 8 charecter"),
+  password: yup.string().min(5, "you need 5 charecter"),
   confirm_password:yup.string().oneOf([yup.ref("password")],"password must be matched")
 })
 
@@ -19,27 +20,30 @@ export default function Form() {
     resolver: yupResolver(schema),
     mode:"onBlur"
   })
+
+   const {data ,isPending,mutate}=usePostLogIn()
   function submitHandler(formData) {
-    console.log(formData);
-    
+    console.log(formData)
+    mutate({username:formData.username ,password:formData.password})
+   
   }
   const queryClient = useQueryClient()
   
-      async function mutationFn(data) {
-          const res = await axios.post("http://harchi.com/register", data);
-          return res
-      }
-  const { mutateAsync, data, error, status } = useMutation({
-          mutationFn,
-          onSuccess: (res) => {
-              queryClient.invalidateQueries(["products"])
-              console.log("success:", res)
-          },
-          onError: (error) => {
-              console.log("on error:", error)
-          },
+  //     async function mutationFn(data) {
+  //         const res = await axios.post("http://harchi.com/register", data);
+  //         return res
+  //     }
+  // const { mutateAsync,  error, status } = useMutation({
+  //         mutationFn,
+  //         onSuccess: (res) => {
+  //             queryClient.invalidateQueries(["products"])
+  //             console.log("success:", res)
+  //         },
+  //         onError: (error) => {
+  //             console.log("on error:", error)
+  //         },
   
-      })
+  //     })
     return (
       <>
         <div>

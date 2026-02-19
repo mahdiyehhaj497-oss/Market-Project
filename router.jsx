@@ -6,8 +6,9 @@ import Settelment from "./src/pages/Settelment";
 import Layout from "./src/Component/Layout";
 import SinglePage from "./src/Component/SinglePage";
 import ProtectedRoute from "./src/ProtectedRouts";
-import AdminPage from "./src/Component/AdminPage";
+import AdminPage from "./src/Component/AdminPanel";
 import { lazy } from "react";
+import AdminPanel from "./src/Component/AdminPanel";
 
 const Home = lazy(() => import("./src/pages/Home"));
 
@@ -39,7 +40,7 @@ const routes = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <AdminPage />,
+            element: <AdminPanel />,
           },
         ],
       },

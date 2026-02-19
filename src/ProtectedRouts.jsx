@@ -1,9 +1,10 @@
 import { useEffect, useMemo } from "react"
-import { useNavigate } from "react-router-dom"
+import { Outlet, useNavigate } from "react-router-dom"
+import Cookies from "js-cookie";
 
 export default function ProtectedRoute() {
     const token = useMemo(() => {
-      return  localStorage.getItem("token");
+      return  Cookies.get("token");
     },[]) 
     const navigate = useNavigate()
  
