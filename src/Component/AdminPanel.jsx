@@ -8,6 +8,7 @@ import SmallForm from "./shared/smallForm";
 import { useForm } from "react-hook-form";
 import usePutProduct from "../hooks/usePutProduct";
 import usePostProduct from "../hooks/usePostProduct";
+import Footer from "./shared/Footer";
 
 export default function AdminPanel() {
 
@@ -147,6 +148,7 @@ const[editing,setEditing]=useState(null)
             </div>
           </div>
         )}
+       
       </>
     );
 }

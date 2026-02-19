@@ -62,7 +62,7 @@ export default function Products() {
           />
         </div>
 
-        <div className="grid grid-cols-4 gap-2  m-4  ">
+        <div className="grid grid-cols-4 gap-2    ">
           {filteredPost.map((item) => (
             <Carts
               key={item.id}
@@ -75,12 +75,7 @@ export default function Products() {
             />
           ))}
         </div>
-        {modalOpen && <BaseModal closeHandler={()=> setModalOpen(false)}>
-        <SmallForm/>
-        </BaseModal>}
-        <div className="flex justify-center items-center pb-9">
-          <Button  variant="owne">Add New Product</Button>
-        </div>
+        
       </div>
     </>
   );

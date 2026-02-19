@@ -2,6 +2,8 @@ import { SearchCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import Navbar from "../Component/shared/Navbar";
+import SmallForm from "../Component/shared/smallForm";
+import Footer from "../Component/shared/Footer";
 
 export default function Home() { 
  
@@ -36,7 +38,9 @@ export default function Home() {
               />
             
           </div>
+          
         </div>
+        <Footer/>
       </>
     );
 }

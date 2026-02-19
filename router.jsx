@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 // import Home from "./src/pages/Home";
 import SingIn from "./src/pages/Sing In";
 import SeePro from "./src/pages/SeePro";
+import Single from "./src/pages/Single"
 import Settelment from "./src/pages/Settelment";
 import Layout from "./src/Component/Layout";
 import SinglePage from "./src/Component/SinglePage";
@@ -24,13 +25,14 @@ const routes = createBrowserRouter([
         path: "/singin",
         element: <SingIn />,
       },
+      
       {
-        path: "/product",
+        path: "product",
         element: <SeePro />,
         children: [
           {
             path: ":id",
-            element: <SinglePage />,
+            element: <SinglePage/>,
           },
         ],
       },

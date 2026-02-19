@@ -3,9 +3,14 @@ import { useParams } from "react-router-dom";
 import Loading from "./shared/Is Loading";
 import Error from "./shared/Error";
 import useGetProduct from "../hooks/useGetProduct";
+import Footer from "./shared/Footer";
+import useGetSingleProduct from "../hooks/usegetSingleProduct";
 
 export default function SinglePage() {
-  const { isError, isLoading, data } = useGetProduct;
+
+  const { id } = useParams()
+  
+   const{data,isLoading,isError}=useGetSingleProduct(id)
 
   return (
     <>
@@ -33,6 +38,7 @@ export default function SinglePage() {
           </button>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
